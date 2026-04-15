@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int Binary(int numbers[], int size, int current)
+{
+}
+
+void insertion(int numbers[], int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        int current = numbers[i];
+        int j = i - 1;
+        while (j >= 0 && numbers[j] > current)
+        {
+            numbers[j + 1] = numbers[j];
+            j -= 1;
+        }
+        numbers[j + 1] = current;
+    }
+}
+
+int main()
+{
+    int numbers[5] = {45, 56, 78, 98, 0};
+    insertion(numbers, sizeof(numbers) / sizeof(numbers[0]));
+
+    printf("%d\t", numbers[0]);
+    printf("%d\t", numbers[1]);
+    printf("%d\t", numbers[2]);
+    printf("%d\t", numbers[3]);
+    printf("%d\t", numbers[4]);
+
+    return 0;
+}
